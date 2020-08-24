@@ -1,7 +1,9 @@
 //Popup.js
 //Shows the Opening Lobby
-function showLobby(src, alt) {
+function showLobby(src, alt, width, height) {
   var img = document.createElement("img");
+  img.width = 560
+  img.height = 560
   img.src = "opening_lobby.png";
   img.alt = 'Opening Lobby';
 
@@ -18,6 +20,7 @@ function startGame(){
   document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#startButtonImage").addEventListener('click', startGame);
   document.querySelector("#infoButtonImage").addEventListener('click', openInfo);
+  document.querySelector("#windowButtonImage").addEventListener('click', openWindow);
 });
 //Shows Info Screen Image
 function showImage(src, alt) {
@@ -32,6 +35,11 @@ function openInfo() {
   document.getElementsByTagName('body')[0].innerHTML = '';
   showImage();
 }
-function openWindow() {
-  console.log("looks right")
+function openWindow(src, alt, width, height) {
+  console.log("b r o")
+  var img = document.createElement("img");
+  img.width = 560;
+  img.height = 560;
+  img.src = "planet_chooser.png";
+  img.alt = 'Screen to choose your planet/server';
 }
