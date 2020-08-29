@@ -1,4 +1,6 @@
 //Popup.js
+//Global Variables
+var killInfo = 0;
 //Shows the Opening Lobby
 function showLobby(src, alt, width, height) {
   var img = document.createElement("img");
@@ -20,21 +22,18 @@ function startGame(){
   document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#startButtonImage").addEventListener('click', startGame);
   document.querySelector("#infoButtonImage").addEventListener('click', openInfo);
-  document.querySelector("#windowButtonImage").addEventListener('click', openWindow);
 });
 //Shows Info Screen Image
-function showImage(src, alt) {
-  var img = document.createElement("img");
-  img.src = "info_screen.png";
-  img.alt = 'Information Screen';
-
-  document.body.appendChild(img);
+function openInfo(src, alt) {
+  if (killInfo === 0){
+    var img = document.createElement("img");
+    img.src = "info_screen.png";
+    img.alt = 'Information Screen';
+    document.body.appendChild(img);
+    killInfo = 1;
+};
 }
 //Output for openInfo button
-function openInfo() {
-  document.getElementsByTagName('body')[0].innerHTML = '';
-  showImage();
-}
 function openWindow(src, alt, width, height) {
   console.log("b r o")
   var img = document.createElement("img");
