@@ -5,7 +5,7 @@ var killInfo = 0;
 function planetChooser(src, alt, width, height) {
   var img = document.createElement("img");
   img.width = 560
-  img.height = 560
+  img.height = 580
   img.src = "planet_chooser.png";
   img.alt = 'Opening Lobby';
 
