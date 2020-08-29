@@ -2,11 +2,11 @@
 //Global Variables
 var killInfo = 0;
 //Shows the Opening Lobby
-function showLobby(src, alt, width, height) {
+function planetChooser(src, alt, width, height) {
   var img = document.createElement("img");
   img.width = 560
   img.height = 560
-  img.src = "opening_lobby.png";
+  img.src = "planet_chooser.png";
   img.alt = 'Opening Lobby';
 
   document.body.appendChild(img);
@@ -14,7 +14,7 @@ function showLobby(src, alt, width, height) {
 //Output for startGame button
 function startGame(){
   document.getElementsByTagName('body')[0].innerHTML = '';
-  showLobby();
+  planetChooser();
 }
 // Add event listeners once the DOM has fully loaded by listening for the
 // `DOMContentLoaded` event on the document, and adding your listeners to
