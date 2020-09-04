@@ -1,20 +1,75 @@
 //Popup.js
 //Global Variables
 var killInfo = 0;
+var killLobby = 0;
+var killChooser = 0;
+var popupLoaded = 0;
+//Function to display black hole/quick join
+function blackHole(src, alt, width, height) {
+  //if (killChooser === 1){
+  console.log("working")
+  var img = document.createElement("img");
+  img.width = 560
+  img.height = 580
+  img.src = "black_hole.png";
+  img.alt = 'Black hole/Quick Start (join)';
+  //};
+}
+//Function to diplay the various planets (commented until we decide to use js or html for this)
+//function planets(){
+  //if (killChooser === 1){
+  //console.log("yay2")
+  //var img = document.createElement("img");
+  //img.width = 560
+  //img.height = 580
+  //img.src = "Planet_lucrous.png";
+  //img.alt = 'Planet Lucrous';
+
+  //img.width = 560
+  //img.height = 580
+  //img.src = "Planet_magnus.png";
+  //img.alt = 'Planet Magnus';
+
+  //img.width = 560
+  //img.height = 580
+  //img.src = "Planet_XonQ.png";
+  //img.alt = 'Planet XonQ';
+
+  //For Venom Planet When it's done
+  //img.width = 560
+  //img.height = 580
+  //img.src = "Planet_lucrous.png";
+  //img.alt = 'Planet Lucrous';
+  //};
+//}
+//Function for triggering multiplayer
+function multiplayerTrigger() {
+  if (popupLoaded === 1) {
+  console.log("working")
+  };
+}
 //Shows the Opening Lobby
-function planetChooser(src, alt, width, height) {
+function planetChooser(src, alt, width, height, background, id, style, zIndex, index  ) {
+  if (killLobby === 0){
   var img = document.createElement("img");
   img.width = 560
   img.height = 580
   img.src = "planet_chooser.png";
-  img.alt = 'Opening Lobby';
-
+  img.alt = 'Screen to choose your planet';
+  img.style["z-index"] = -1
   document.body.appendChild(img);
+  killChooser = 1
+  killLobby = 1
+  blackHole()
+  //planets()
+};
 }
 //Output for startGame button
 function startGame(){
-  document.getElementsByTagName('body')[0].innerHTML = '';
+  //document.getElementsByTagName('body')[0].innerHTML = '';
   planetChooser();
+  popupLoaded = 1
+  multiplayerTrigger()
 }
 // Add event listeners once the DOM has fully loaded by listening for the
 // `DOMContentLoaded` event on the document, and adding your listeners to
@@ -31,14 +86,5 @@ function openInfo(src, alt) {
     img.alt = 'Information Screen';
     document.body.appendChild(img);
     killInfo = 1;
-};
-}
-//Output for openInfo button
-function openWindow(src, alt, width, height) {
-  console.log("b r o")
-  var img = document.createElement("img");
-  img.width = 560;
-  img.height = 560;
-  img.src = "planet_chooser.png";
-  img.alt = 'Screen to choose your planet/server';
+  };
 }
